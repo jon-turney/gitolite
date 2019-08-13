@@ -31,7 +31,7 @@ sub compile {
 
     # the order matters; new repos should be created first, to give store a
     # place to put the individual gl-conf files
-    new_repos();
+    # new_repos();
 
     # cache control
     if ($rc{CACHE}) {
