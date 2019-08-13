@@ -32,9 +32,11 @@ for my $newbin (`git diff --stat=999,999 $oldtree $newtree | grep Bin.0.-`) {
     my ( $f, $s ) = ( $1, $2 );
     next if $s <= $max;
 
-    next if $msg =~ /^ *$f +signed-off by: *$author_email *$/mi;
+    # allow 'icon' files
+    $f =~ s/\s+$//;
+    next if $f =~ /\.(png|ico|svg)$/;
 
-    print "$refex $f is larger than $max";
+    print "$refex $f size $s is larger than $max";
 }
 
 exit 0
