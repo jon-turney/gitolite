@@ -298,7 +298,7 @@ sub greeting {
     }
 
     # normal output
-    return "hello$gl_user, this is " . ( $ENV{USER} || "httpd" ) . "\@$hn running gitolite3 " . version() . " on git $gv\n";
+    return "hello$gl_user, this is " . ( $ENV{USER} || "httpd" ) . "\@$hn running gitolite3 on git $gv\n";
 }
 
 sub trigger {
